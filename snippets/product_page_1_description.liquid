@@ -847,10 +847,10 @@ select.shopify-buy__option-select__select {
   
     {% assign foo = 1 %}
   
-  {% if product.metafields.FRAME_DISCRPTION.FRAME_DISCRPTION != blank or product.metafields.LENS_DISCRIPTION.LENS_DISCRIPTION != blank%}
+  {% if product.metafields.FRAME_DISCRPTION.FRAME_DISCRPTION != blank %}
 	
 
-  <div class="tt-collapse-block prpage-tabs">
+  <div class="tt-collapse-block prpage-tabs ">
         	
 
     <div style="display:none">{% increment foo %}</div>    
@@ -858,10 +858,12 @@ select.shopify-buy__option-select__select {
 		
       {% if product.metafields.FRAME_DISCRPTION.FRAME_DISCRPTION != blank %}
 
-    <div class="tt-item " >
-      <div class="tt-collapse-title">0{% increment foo %}_FRAME</div>
-      <div class="tt-collapse-content">{{product.metafields.FRAME_DISCRPTION.FRAME_DISCRPTION}}
-        
+    <div class="tt-item gjhg" >
+      <div class="tt-collapse-title"> PRODUCT DETAILS {% comment %}0{% increment foo %}_FRAME{% endcomment %}</div>
+      <div class="tt-collapse-content">
+        {{product.metafields.FRAME_DISCRPTION.FRAME_DISCRPTION}}
+        {{product.metafields.LENS_DISCRIPTION.LENS_DISCRIPTION}}
+        {{ product.metafields.SIZING_FIT_DISCRI.SIZING_FIT_DISCRIPTION }}
               
         {% if product.metafields.read_more.read_more != blank %}
 					<br class="local-br">
@@ -872,7 +874,7 @@ select.shopify-buy__option-select__select {
       </div>
     </div>
         {% endif %}
-
+   {% comment %}
     {% if product.metafields.LENS_DISCRIPTION.LENS_DISCRIPTION != blank %}
     <div class="tt-item " >
       <div class="tt-collapse-title">0{% increment foo %}_LENS</div>
@@ -890,7 +892,7 @@ select.shopify-buy__option-select__select {
     </div>
         {% endif %}
     
- {% if product.metafields.SIZING_FIT_DISCRI.SIZING_FIT_DISCRIPTION != blank %}
+   {% if product.metafields.SIZING_FIT_DISCRI.SIZING_FIT_DISCRIPTION != blank %}
     <div class="tt-item " >
       <div class="tt-collapse-title">0{% increment foo %}_SIZING & FIT</div>
       <div class="tt-collapse-content">{{ product.metafields.SIZING_FIT_DISCRI.SIZING_FIT_DISCRIPTION }}
@@ -905,13 +907,15 @@ select.shopify-buy__option-select__select {
       
     </div>
         {% endif %}
-    
+    {% endcomment %}
     
     {% if product.metafields.FREE_SHIPPING_DIS.FREE_SHIPPING_DISCRIPTION != blank %}
 
     <div class="tt-item " >
-      <div class="tt-collapse-title">0{% increment foo %}_FREE SHIPPING</div>
-      <div class="tt-collapse-content">{{product.metafields.FREE_SHIPPING_DIS.FREE_SHIPPING_DISCRIPTION}}
+      <div class="tt-collapse-title">SHIPPING & RETURNS {% comment %}0{% increment foo %}_FREE SHIPPING{% endcomment %}</div>
+      <div class="tt-collapse-content">
+      {{product.metafields.FREE_SHIPPING_DIS.FREE_SHIPPING_DISCRIPTION}}
+      {{product.metafields.EASY_RETURNS_DISC.EASY_RETURNS_DISCRIPTION}}
       
       {% if product.metafields.read_more_4.read_more_4 != blank %}
 					<br class="local-br">
@@ -926,7 +930,7 @@ select.shopify-buy__option-select__select {
     </div>
         {% endif %}
     
-    
+    {% comment %}
       {% if product.metafields.EASY_RETURNS_DISC.EASY_RETURNS_DISCRIPTION != blank %}
 
     <div class="tt-item " >
@@ -967,12 +971,12 @@ select.shopify-buy__option-select__select {
     </div>
         {% endif %}
     
-    
+    {% endcomment %}
     
     {% if product.metafields.REPAIR_RECYCLE.REPAIR_RECYCLE_DISCRIPTION != blank %}
 
     <div class="tt-item " >
-      <div class="tt-collapse-title">0{% increment foo %}_TRADE IN PROGRAM</div>
+      <div class="tt-collapse-title">RECYCLING PROGRAM {% comment %}0{% increment foo %}_TRADE IN PROGRAM{% endcomment %}</div>
       <div class="tt-collapse-content">{{product.metafields.REPAIR_RECYCLE.REPAIR_RECYCLE_DISCRIPTION}}
       
       
@@ -994,7 +998,7 @@ select.shopify-buy__option-select__select {
      {% if product.metafields.one_frame_one_email.one_frame_one_email != blank %}
 
     <div class="tt-item " >
-      <div class="tt-collapse-title">0{% increment foo %}_ONE FRAME = ONE MEAL</div>
+      <div class="tt-collapse-title">ONE PURCHASE = ONE FRAME {% comment %}0{% increment foo %}_ONE FRAME = ONE MEAL{% endcomment %}</div>
       <div class="tt-collapse-content">{{product.metafields.one_frame_one_email.one_frame_one_email}}
       
       
