@@ -46,6 +46,20 @@
 
 
 <div class="container-indent">
+
+
+  {% if collection.image != blank %}
+  <div class="col-6 col-md-{{ item.products_in_column }} tt-col-item collection-page-grid collection_first_div desktop_only">
+   <div class="collection_data">
+      <img src="{{ collection.image | img_url: 'master' }}" height="100%" width="100%">
+      <div class="collection_description">
+          {{ collection.description }}
+      </div>
+   </div>
+  </div>
+ {% endif %}
+
+
   {% capture captured_page %}
 {% include 'v9-collection-header' %}
 {% include 'v10-collection-product-list-combined' %}
@@ -77,6 +91,20 @@
           </div>-->
 
           <div class="tt-product-listing row{% if collection.products.size == 0 %} flex-center-message{% endif %}{% if settings.products_in_one_row %} tt-col-one only-row{% endif %}" data-onerow="{{ settings.use_one_row_in_theme }}">
+          
+
+            {% if collection.image != blank %}
+              <div class="col-6 col-md-{{ item.products_in_column }} tt-col-item collection-page-grid collection_first_div desktop_only">
+               <div class="collection_data">
+                  <img src="{{ collection.image | img_url: 'master' }}" height="100%" width="100%">
+                  <div class="collection_description">
+                      {{ collection.description }}
+                  </div>
+               </div>
+              </div>
+             {% endif %}
+
+
             {%- if collection.products.size > 0 -%}
             {%- for product in collection.products -%}
             <div class="col-6 col-md-{{ item.products_in_column }} tt-col-item collection-page-grid">
