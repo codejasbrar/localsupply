@@ -1,4 +1,24 @@
 
+
+
+.collection_first_div .collection_data img{
+  object-fit: cover;
+}
+.collection_first_div .collection_data{
+  height: 100%;
+}
+.collection_data .collection_description {
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  padding: 0 25px;
+  color: #fff;
+}
+
+#shopify-section-product-template .container-indent .col-4{
+  padding: 0 15px;
+}
+
 .tt-desctop-menu .simple_menu .tt-col-list [class^="col"],.tt-stuck-nav .simple_menu .tt-col-list [class^="col"] {
     margin-top: 0;
 }
@@ -132,6 +152,39 @@ h3.pro-1 {
 }
 
 @media only screen and (max-width:768px){
+  .v10-collection-banner h1:not(.tt-title-subpages):not([class^="tt-title"]):not([class^="tt-collapse"]):not([class^="tt-aside"]) {
+    font-size: 30px !important;
+    line-height: 40px !important;
+    margin-left: 0;
+  }
+  div.collection_data .collection_description {
+    bottom: 10px;
+    width: 90%;
+    left: 5%;
+    padding: 0;
+    font-size: 12px;
+  }
+  .pagecollection #tt-pageContent .shopify-section > .container-indent:not(.nomargin):not([class^="tt-offset"]){
+    margin-top: 0;
+  }
+  div.modal .modal-header .close {
+    right: -10px;
+    top: -10px;
+}
+  div.modal .modal-header .close:before {
+    color: #000;
+    font-weight: 100;
+  }
+  .v10-product-guarantee{
+    padding-top: 30px !important;
+  }
+  .local-four-desc h3 {
+    letter-spacing: normal;
+  }
+  .container-fluid-mobile .col-8.sticky-im.px-1.mb-5 {
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+  }
   header div.tt-search .tt-dropdown-menu form .tt-search-input{
     width: 100%;
   }
